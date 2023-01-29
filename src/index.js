@@ -24,16 +24,18 @@ app.use(express.json());
 
 // Template engine
 app.engine(
-  'hbs', handlebars.engine({
+  'hbs',
+  handlebars.engine({
     extname: '.hbs',
   })
 );
-      app.set('view engine', 'hbs');
-app.set('views',      path.join(__dirname, 'resources/views'));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 // Route
-route(    app);
+route(app);
 
 // Port
-app.listen(port, (err, res) => {console.log(`Server listening on ${port}`);
+app.listen(port, (err, res) => {
+  console.log(`Server listening on ${port}`);
 });
